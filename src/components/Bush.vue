@@ -3,7 +3,6 @@
     <div class="flex flex-col flex-shrink" id="app">
       <!-- Image and Title -->
       <div class="mx-auto text-center md:p-2">
-        <!-- FIXME: Insert proper logo -->
         <img
           class="mx-auto h-32 transform scale-75 md:scale-100"
           src="../assets/logo.png"
@@ -18,15 +17,19 @@
       </div>
       <!-- Link Columns -->
       <div
-        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240"
+        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240 shadow-lg rounded-md bg-gray"
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.message"
       >
-        <a v-bind:href="links.Link" class="flex">
-          <img class="h-auto" v-bind:src="Thumbnail" v-bind:alt="logo" />
-          <!-- FIXME: Init Thumbnails -->
-          <p class="my-auto text-xs md:text-xl ml-1 mr-10 flex md:px-1">
+        <a
+          v-bind:href="details.Link"
+          class="flex"
+          v-for="images in details.Thumbnails"
+          v-bind:key="images.url"
+        >
+          <img class="h-20 w-20" v-bind:src="images.url" v-bind:alt="logo" />
+          <p class="flex my-auto text-baseline md:text-lg font-bold ml-1">
             {{ details.CTA }}
           </p>
         </a>
@@ -50,6 +53,18 @@
         ></a>
       </div>
     </div>
+    <small
+      >Icons made by
+      <a
+        href="https://www.flaticon.com/authors/dinosoftlabs"
+        title="DinosoftLabs"
+        >DinosoftLabs</a
+      >
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon"
+        >www.flaticon.com</a
+      ></small
+    >
   </body>
 </template>
 

@@ -1,6 +1,10 @@
 <template>
   <main :class="this.bgcolor">
-    <Bush title="This is a title" msg="Welcome to Your Vue.js App" />
+    <Bush
+      title="Jim's Frivilous Lawsuits"
+      msg="Defendant pays legal fees or your money back!"
+      subcolor="{this.subcolor}"
+    />
   </main>
 </template>
 
@@ -20,6 +24,7 @@ export default {
   data: function() {
     return {
       bgcolor: "bg-red",
+      subcolor: "bg-orange",
     };
   },
 
@@ -38,7 +43,7 @@ export default {
         "purple",
         "pink",
       ];
-      this.bgcolor = "bg-" + color[_.random(0, 9)];
+      this.bgcolor = "bg-" + color[_.random(0, 8)];
     },
   },
 };
