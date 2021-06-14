@@ -1,5 +1,5 @@
 <template>
-  <body class="container mx-auto min-h-screen bg-opacity-50">
+  <body :class="this.bgcolor">
     <div class="flex flex-col flex-shrink" id="app">
       <!-- Image and Title -->
       <div class="mx-auto text-center md:p-2">
@@ -15,24 +15,27 @@
           {{ msg }}
         </h4>
       </div>
+
       <!-- Link Columns -->
       <div
-        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240 shadow-lg rounded-md bg-gray"
+        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240 shadow-lg rounded-md"
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.message"
       >
-        <a
-          v-bind:href="details.Link"
-          class="flex"
-          v-for="images in details.Thumbnails"
-          v-bind:key="images.url"
-        >
-          <img class="h-20 w-20" v-bind:src="images.url" v-bind:alt="logo" />
-          <p class="flex my-auto text-baseline md:text-lg font-bold ml-1">
-            {{ details.CTA }}
-          </p>
-        </a>
+        <div :class="this.subcolor">
+          <a
+            class="flex"
+            v-bind:href="details.Link"
+            v-for="images in details.Thumbnails"
+            v-bind:key="images.url"
+          >
+            <img class="h-20 w-20" v-bind:src="images.url" v-bind:alt="logo" />
+            <p class="flex my-auto text-baseline md:text-lg font-bold ml-1">
+              {{ details.CTA }}
+            </p>
+          </a>
+        </div>
       </div>
 
       <!-- Social Media Favicons -->
@@ -70,6 +73,7 @@
 
 <script>
 import axios from "axios";
+import _ from "lodash";
 
 export default {
   name: "Bush",
@@ -77,25 +81,58 @@ export default {
     // Fetch data on load
     this.links = await this.fetchLinks();
     console.log(await this.fetchLinks());
+    this.backgroundRandom();
   },
   props: ["msg", "title"],
   data() {
     return {
       links: [],
+      credentials: process.env.VUE_APP_AT_LINK,
+      bgcolor: "bg-white",
+      subcolor: "bg-orange",
     };
   },
 
   methods: {
     async fetchLinks() {
-      return await axios
-        .get(
-          "https://api.airtable.com/v0/app8zAQYHubfvyPt6/connect?api_key=keyoz2hOe6j6VzUh6"
-        )
-        .then((response) => {
-          return response.data.records.map((links) => {
-            return links.fields;
-          });
+      return await axios.get(this.credentials).then((response) => {
+        return response.data.records.map((links) => {
+          return links.fields;
         });
+      });
+    },
+    backgroundRandom() {
+      //Yield random fluro background color.
+      // let color = [
+      //   //9 colors
+      //   "red",
+      //   "orange",
+      //   "yellow",
+      //   "green",
+      //   "teal",
+      //   "blue",
+      //   "indigo",
+      //   "purple",
+      //   "pink",
+      // ];
+
+      let color2 = [
+        //9 colors
+        ["red", "green"],
+        ["orange", "blue"],
+        ["yellow", "purple"],
+        ["green", "red"],
+        ["teal", "orange"],
+        ["blue", "orange"],
+        ["indigo", "yellow"],
+        ["purple", "yellow"],
+        ["pink", "green"],
+      ];
+
+      var scheme = color2[_.random(0, 8)];
+
+      this.bgcolor = "bg-" + scheme[0];
+      this.subcolor = "bg-" + scheme[1];
     },
   },
 };
