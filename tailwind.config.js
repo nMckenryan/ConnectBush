@@ -13,6 +13,7 @@ module.exports = {
       indigo: "#5a67d8",
       purple: "#805ad5",
       pink: "#d53f8c",
+      white: "#ffffff",
     },
   },
   variants: {

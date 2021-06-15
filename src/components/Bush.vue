@@ -1,24 +1,40 @@
-<template>
+<template
+  ><link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+    rel="stylesheet"
+  />
   <body :class="this.bgcolor">
     <div class="flex flex-col flex-shrink" id="app">
-      <!-- Image and Title -->
-      <div class="mx-auto text-center md:p-2">
+      <!--  HEADER IMAGE-->
+      <div
+        class="mx-auto text-center md:p-2"
+        style="  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;"
+      >
         <img
-          class="mx-auto h-32 transform scale-75 md:scale-100"
+          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl"
           src="../assets/logo.png"
           alt="logo"
         />
-        <h1 class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3">
+        <!-- TITLE -->
+        <h1
+          class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3 text-white"
+        >
           {{ title }}
         </h1>
-        <h4 class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold">
+        <!-- SUBTITLE -->
+        <h4
+          class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold text-white"
+          style="font-family: 'Permanent Marker', cursive;"
+        >
           {{ msg }}
         </h4>
       </div>
 
       <!-- Link Columns -->
       <div
-        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240 shadow-lg rounded-md"
+        class="flex-col mx-auto w-3/4 flex-shrink m-1 p-1 w-240"
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.message"
@@ -120,7 +136,7 @@ export default {
         //9 colors
         ["red", "green"],
         ["orange", "blue"],
-        ["yellow", "purple"],
+        ["yellow", "indigo"],
         ["green", "red"],
         ["teal", "orange"],
         ["blue", "orange"],
@@ -132,7 +148,7 @@ export default {
       var scheme = color2[_.random(0, 8)];
 
       this.bgcolor = "bg-" + scheme[0];
-      this.subcolor = "bg-" + scheme[1];
+      this.subcolor = "bg-" + scheme[1] + " rounded-2xl shadow-lg";
     },
   },
 };
