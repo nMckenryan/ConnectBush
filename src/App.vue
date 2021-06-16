@@ -1,9 +1,6 @@
 <template>
   <main>
-    <Bush
-      title="Jim's Frivilous Lawsuits"
-      msg="Defendant pays legal fees or your money back!"
-    />
+    <Bush title="Larry's Bargain Litigation" msg="Win the life you deserve!" />
   </main>
 </template>
 

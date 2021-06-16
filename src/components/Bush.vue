@@ -8,24 +8,22 @@
     <div class="flex flex-col flex-shrink" id="app">
       <!--  HEADER IMAGE-->
       <div
-        class="mx-auto text-center md:p-2"
+        :class="this.textcolor"
         style="  -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;"
       >
         <img
-          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl shadow-lg"
+          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl shadow-lg mt-2"
           src="../assets/logo.png"
           alt="logo"
         />
         <!-- TITLE -->
-        <h1
-          class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3 text-white"
-        >
+        <h1 class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3">
           {{ title }}
         </h1>
         <!-- SUBTITLE -->
         <h4
-          class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold text-white"
+          class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold"
           style="font-family: 'Permanent Marker', cursive;"
         >
           {{ msg }}
@@ -87,15 +85,6 @@
   </body>
 </template>
 
-<style>
-h1,
-h4,
-p,
-a {
-  color: textcolor;
-}
-</style>
-
 <script>
 import axios from "axios";
 import _ from "lodash";
@@ -115,7 +104,6 @@ export default {
       credentials: process.env.VUE_APP_AT_LINK,
       bgcolor: "",
       subcolor: "",
-      textcolor: "white",
     };
   },
 
@@ -130,22 +118,22 @@ export default {
     backgroundRandom() {
       let colorArr = [
         //10 colors
-        ["red", "green", "#black"],
+        ["red", "green", "black"],
         ["orange", "blue", "white"],
         ["yellow", "indigo", "white"],
-        ["green", "red", "black"],
-        ["teal", "mauvre", "black"],
+        ["green", "red", "white"],
+        ["teal", "mauvre", "white"],
         ["blue", "orange", "black"],
-        ["indigo", "tan", "black"],
+        ["indigo", "tan", "white"],
         ["purple", "yellow", "white"],
         ["pink", "lime", "black"],
-        ["black", "offwhite", "white"],
       ];
 
-      var scheme = colorArr[_.random(0, 9)];
+      var scheme = colorArr[_.random(0, 8)];
       this.bgcolor = "bg-" + scheme[0];
-      this.subcolor = "bg-" + scheme[1] + " rounded-2xl shadow-lg";
-      this.textColor = scheme[2];
+      this.subcolor =
+        "bg-" + scheme[1] + " text-" + scheme[2] + " rounded-2xl shadow-lg";
+      this.textcolor = "text-" + scheme[2];
     },
   },
 };
