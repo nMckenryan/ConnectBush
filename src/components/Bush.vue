@@ -13,7 +13,7 @@
   -webkit-text-stroke-color: black;"
       >
         <img
-          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl"
+          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl shadow-lg"
           src="../assets/logo.png"
           alt="logo"
         />
@@ -87,6 +87,15 @@
   </body>
 </template>
 
+<style>
+h1,
+h4,
+p,
+a {
+  color: textcolor;
+}
+</style>
+
 <script>
 import axios from "axios";
 import _ from "lodash";
@@ -104,8 +113,9 @@ export default {
     return {
       links: [],
       credentials: process.env.VUE_APP_AT_LINK,
-      bgcolor: "bg-white",
-      subcolor: "bg-orange",
+      bgcolor: "",
+      subcolor: "",
+      textcolor: "white",
     };
   },
 
@@ -118,37 +128,24 @@ export default {
       });
     },
     backgroundRandom() {
-      //Yield random fluro background color.
-      // let color = [
-      //   //9 colors
-      //   "red",
-      //   "orange",
-      //   "yellow",
-      //   "green",
-      //   "teal",
-      //   "blue",
-      //   "indigo",
-      //   "purple",
-      //   "pink",
-      // ];
-
-      let color2 = [
-        //9 colors
-        ["red", "green"],
-        ["orange", "blue"],
-        ["yellow", "indigo"],
-        ["green", "red"],
-        ["teal", "orange"],
-        ["blue", "orange"],
-        ["indigo", "yellow"],
-        ["purple", "yellow"],
-        ["pink", "green"],
+      let colorArr = [
+        //10 colors
+        ["red", "green", "#black"],
+        ["orange", "blue", "white"],
+        ["yellow", "indigo", "white"],
+        ["green", "red", "black"],
+        ["teal", "mauvre", "black"],
+        ["blue", "orange", "black"],
+        ["indigo", "tan", "black"],
+        ["purple", "yellow", "white"],
+        ["pink", "lime", "black"],
+        ["black", "offwhite", "white"],
       ];
 
-      var scheme = color2[_.random(0, 8)];
-
+      var scheme = colorArr[_.random(0, 9)];
       this.bgcolor = "bg-" + scheme[0];
       this.subcolor = "bg-" + scheme[1] + " rounded-2xl shadow-lg";
+      this.textColor = scheme[2];
     },
   },
 };
