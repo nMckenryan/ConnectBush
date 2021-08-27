@@ -148,7 +148,13 @@ export default {
       var scheme = colorArr[_.random(0, 8)];
       var gd = gradDirections[_.random(0, 3)];
       this.bgcolor =
-        "bg-gradient-to-" + gd + " from-" + scheme[0] + " to-" + scheme[1];
+        "bg-gradient-to-" +
+        gd +
+        " from-" +
+        scheme[0] +
+        " to-" +
+        scheme[1] +
+        " min-h-screen";
       this.subcolor =
         "bg-" + scheme[2] + " text-" + scheme[3] + " rounded-2xl shadow-lg";
       this.textcolor = "text-" + scheme[2];
