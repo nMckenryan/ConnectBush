@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      white: "#ffffff",
+      white: "bg-gradient-to-r from-green-400 to-blue-500",
       black: "#313639",
       mauvre: "#974b31",
       offwhite: "#FFFDD0",

@@ -1,5 +1,6 @@
 <template
-  ><link rel="preconnect" href="https://fonts.gstatic.com" />
+  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
     rel="stylesheet"
@@ -9,11 +10,22 @@
       <!--  HEADER IMAGE-->
       <div
         :class="this.textcolor"
-        style="  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;"
+        style="
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: black;
+        "
       >
         <img
-          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl shadow-lg mt-2"
+          class="
+            mx-auto
+            h-32
+            transform
+            scale-75
+            md:scale-100
+            rounded-3xl
+            shadow-lg
+            mt-2
+          "
           src="../assets/logo.png"
           alt="logo"
         />
@@ -24,7 +36,7 @@
         <!-- SUBTITLE -->
         <h4
           class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold"
-          style="font-family: 'Permanent Marker', cursive;"
+          style="font-family: 'Permanent Marker', cursive"
         >
           {{ msg }}
         </h4>
@@ -118,21 +130,27 @@ export default {
     backgroundRandom() {
       let colorArr = [
         //10 colors
-        ["red", "green", "black"],
-        ["orange", "blue", "white"],
-        ["yellow", "indigo", "white"],
-        ["green", "red", "white"],
-        ["teal", "mauvre", "white"],
-        ["blue", "orange", "black"],
-        ["indigo", "tan", "white"],
-        ["purple", "yellow", "white"],
-        ["pink", "lime", "black"],
+        // 0 = main color, 1 = gradient end, 2 = contrasting window color. 3 = text
+        ["red", "mauvre", "green", "black"],
+        ["orange", "yellow", "blue", "white"],
+        ["yellow", "gold", "indigo", "white"],
+        ["green", "lime", "red", "white"],
+        ["teal", "blue", "mauvre", "white"],
+        ["blue", "indigo", "orange", "black"],
+        ["indigo", "purple", "tan", "white"],
+        ["purple", "pink", "yellow", "white"],
+        ["pink", "offwhite", "lime", "black"],
       ];
 
+      let gradDirections = ["t", "r", "b", "l"];
+
+      // Selects a Color Scheme at random
       var scheme = colorArr[_.random(0, 8)];
-      this.bgcolor = "bg-" + scheme[0];
+      var gd = gradDirections[_.random(0, 3)];
+      this.bgcolor =
+        "bg-gradient-to-" + gd + " from-" + scheme[0] + " to-" + scheme[1];
       this.subcolor =
-        "bg-" + scheme[1] + " text-" + scheme[2] + " rounded-2xl shadow-lg";
+        "bg-" + scheme[2] + " text-" + scheme[3] + " rounded-2xl shadow-lg";
       this.textcolor = "text-" + scheme[2];
     },
   },

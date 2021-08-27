@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Bush title="Larry's Bargain Litigation" msg="Win the life you deserve!" />
+    <Bush title="Company Co Ltd Pty" msg="Business Administration Solutions" />
   </main>
 </template>
 
