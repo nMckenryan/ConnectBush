@@ -8,13 +8,7 @@
   <body :class="this.bgcolor">
     <div class="flex flex-col flex-shrink" id="app">
       <!--  HEADER IMAGE-->
-      <div
-        :class="this.textcolor"
-        style="
-          -webkit-text-stroke-width: 0.5px;
-          -webkit-text-stroke-color: black;
-        "
-      >
+      <div :class="this.textcolor">
         <img
           class="
             mx-auto
@@ -30,12 +24,15 @@
           alt="logo"
         />
         <!-- TITLE -->
-        <h1 class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3">
+        <h1
+          class="text-2xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3"
+          :style="this.stroke"
+        >
           {{ title }}
         </h1>
         <!-- SUBTITLE -->
         <h4
-          class="text-xl md:text-2xl mt-2 p-3 md:-mt-4 font-bold"
+          class="text-xl md:text-3xl mt-2 p-3 md:-mt-4 font-bold"
           style="font-family: 'Permanent Marker', cursive"
         >
           {{ msg }}
@@ -56,7 +53,13 @@
             v-for="images in details.Thumbnails"
             v-bind:key="images.url"
           >
-            <img class="h-20 w-20" v-bind:src="images.url" v-bind:alt="logo" />
+            <!-- Icon  & Message-->
+            <img
+              class="h-20 w-20 m-2 p-3"
+              :class="'bg-' + this.iconcolor + ' rounded-full'"
+              v-bind:src="images.url"
+              v-bind:alt="logo"
+            />
             <p class="flex my-auto text-baseline md:text-lg font-bold ml-1">
               {{ details.CTA }}
             </p>
@@ -116,6 +119,7 @@ export default {
       credentials: process.env.VUE_APP_AT_LINK,
       bgcolor: "",
       subcolor: "",
+      iconcolor: "",
     };
   },
 
@@ -147,6 +151,7 @@ export default {
       // Selects a Color Scheme at random
       var scheme = colorArr[_.random(0, 8)];
       var gd = gradDirections[_.random(0, 3)];
+      this.iconcolor = scheme[1];
       this.bgcolor =
         "bg-gradient-to-" +
         gd +
@@ -157,7 +162,10 @@ export default {
         " min-h-screen";
       this.subcolor =
         "bg-" + scheme[2] + " text-" + scheme[3] + " rounded-2xl shadow-lg";
-      this.textcolor = "text-" + scheme[2];
+      this.textcolor = "text-" + scheme[3];
+      this.stroke =
+        "-webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: " +
+        scheme[2];
     },
   },
 };
