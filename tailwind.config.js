@@ -10,7 +10,6 @@ module.exports = {
       nightLord: "#003D5B",
       trollOrange: "#ed7700",
       adMech: "#425363",
-      tauGrey: "#bbbbbb",
       screamGrey: "#aaaaaa",
     },
   },

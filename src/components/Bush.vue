@@ -10,6 +10,7 @@
     <div class="flex flex-col flex-shrink" id="app">
       <!--  HEADER IMAGE-->
       <div :class="this.textcolor" style="font-family: 'Merriweather', serif">
+        <!-- TODO: Port logo to SVG for color changability  -->
         <img
           class="
             mx-auto
@@ -47,10 +48,11 @@
             v-bind:href="details.Link"
             v-for="images in details.Thumbnails"
             v-bind:key="images.url"
+            style="fill: green !important"
           >
             <!-- Icon  & Message-->
             <img
-              class="h-16 w-16 m-2 p-3"
+              class="h-16 w-16 m-2 p-3 rounded-xl bg-white"
               v-bind:src="images.url"
               v-bind:alt="logo"
             />
@@ -62,7 +64,8 @@
       </div>
 
       <!-- Social Media Favicons -->
-      <div class="button group mx-auto items-center">
+      <!-- TODO: change icon background on for better contrast -->
+      <div :class="iconcolor">
         <a href="https://www.facebook.com/"
           ><i class="fab fa-facebook-square fa-3x"></i
         ></a>
@@ -79,18 +82,6 @@
         ></a>
       </div>
     </div>
-    <small
-      >Icons made by
-      <a
-        href="https://www.flaticon.com/authors/dinosoftlabs"
-        title="DinosoftLabs"
-        >DinosoftLabs</a
-      >
-      from
-      <a href="https://www.flaticon.com/" title="Flaticon"
-        >www.flaticon.com</a
-      ></small
-    >
   </body>
 </template>
 
@@ -129,22 +120,17 @@ export default {
       let colorArr = [
         //10 colors
         // 0 = main color, 1 = gradient end, 2 = contrasting window color. 3 = text
-        ["adMech", "tauGrey", "trollOrange", "white"],
-        ["tauGrey", "adMech", "sonsBlue", "white"],
-        ["white", "tauGrey", "screamGrey", "black"],
-        ["tauGrey", "nightLord", "black", "black"],
+        ["trollOrange", "trollOrange", "sonsBlue", "white"],
+        ["adMech", "white", "screamGrey", "black"],
+        ["screamGrey", "adMech", "nightLord", "white"],
+        ["nightLord", "sonsBlue", "black", "white"],
       ];
-
-      let gradDirections = ["t", "r", "b", "l"];
 
       // Selects a Color Scheme at random
       var scheme = colorArr[_.random(0, 3)];
-      var gd = gradDirections[_.random(0, 3)];
-      this.iconcolor = scheme[1];
+      this.iconcolor = "flex mx-auto items-center border text-" + scheme[2];
       this.bgcolor =
-        "bg-gradient-to-" +
-        gd +
-        " from-" +
+        "bg-gradient-to-t from-" +
         scheme[0] +
         " to-" +
         scheme[1] +
