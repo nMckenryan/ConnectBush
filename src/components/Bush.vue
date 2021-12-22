@@ -6,18 +6,20 @@
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
     rel="stylesheet"
   />
+
   <body :class="this.bgcolor">
     <div class="flex flex-col flex-shrink" id="app">
       <!--  HEADER IMAGE-->
       <div :class="this.textcolor" style="font-family: 'Merriweather', serif">
         <!-- TODO: Port logo to SVG for color changability  -->
-        <img
+        <!-- <img
           class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl mt-2"
           src="../assets/logo.png"
           alt="logo"
-        />
+        /> -->
+        <svg></svg>
         <!-- TITLE -->
-        <h1 class="text-xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3">
+        <h1 class="text-xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3" data-test="title">
           {{ title }}
         </h1>
         <!-- SUBTITLE -->
@@ -181,7 +183,7 @@ export default {
         //10 colors
         // 0 = main color, 1 = gradient end, 2 = contrasting window color. 3 = text
         ["trollOrange", "trollOrange", "sonsBlue", "white"],
-        ["adMech", "white", "screamGrey", "white"],
+        ["adMech", "white", "screamGrey", "black"],
         ["screamGrey", "adMech", "nightLord", "white"],
         ["nightLord", "sonsBlue", "black", "white"],
       ];
