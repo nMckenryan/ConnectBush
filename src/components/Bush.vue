@@ -12,18 +12,18 @@
       <!--  HEADER IMAGE-->
       <div :class="this.textcolor" style="font-family: 'Merriweather', serif">
         <!-- TODO: Port logo to SVG for color changability  -->
-        <!-- <img
+        <img
           class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl mt-2"
           src="../assets/logo.png"
           alt="logo"
-        /> -->
-        <svg></svg>
+        />
+        <!-- <svg></svg> -->
         <!-- TITLE -->
         <h1 class="text-xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3" data-test="title">
           {{ title }}
         </h1>
         <!-- SUBTITLE -->
-        <h4 class="text-sm md:text-lg mt-2 p-3 md:-mt-4">
+        <h4 class="text-sm md:text-lg mt-2 p-3 md:-mt-4" data-test="subtitle">
           {{ msg }}
         </h4>
       </div>
@@ -47,9 +47,9 @@
             <img
               class="h-10 w-10 md:h-16 md:w-16 m-2 p-2 rounded-xl bg-white"
               v-bind:src="images.url"
-              v-bind:alt="logo"
+              alt="logo"
             />
-            <p class="flex my-auto text-sm md:text-lg text-left ml-2">
+            <p class="flex my-auto text-sm md:text-lg text-left ml-2" data-test="cta">
               {{ details.CTA }}
             </p>
           </a>
@@ -167,6 +167,7 @@ export default {
       bgcolor: "",
       subcolor: "",
       iconcolor: "",
+      textcolor: ""
     };
   },
 
