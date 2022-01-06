@@ -61,37 +61,4 @@ describe("Bush.vue", () => {
 
     expect(linktext.text()).toBe("CALLTOACTION");
   });
-
-it("Checks Social Media Icons have rendered", async () => {
-  const sm = await wrapper.get('[data-test="socialMediaIcons"]');
-
-  expect(sm.findAll('[data-test="socialMediaIcons"]')).toHaveLength(5);
-})
-
-  // it("Populate Links Array", async () => {
-  //   const cta = await wrapper.get('[data-test="cta"]');
-
-  //   // Returns all elements that include arguments specified
-  //   expect(cta.findAll('[data-test="cta"]')).toHaveLength(1);
-
-  //   // Check 2 todos are availabl
-  //   expect(cta.findAll('[data-test="cta"]')).toHaveLength(2);
-  // }
-  // );
-
-  // it("Should render Tab text", async () => {
-  //   let ctaElement = wrapper.vm.fetchLinks();
-  //   ctaElement = await wrapper.find("#call");
-
-  //   // ToBe is more strict than toContain
-  //   expect(ctaElement.text()).toBe(
-  //     "Optimise Mineral Logistics through Rapid Regime Change and Altruistic Political Donations"
-  //   );
-  // });
-
-  // it("Checks CTA is loaded", async () => {
-
-  //   const ctaElement = await wrapper.find("#call");
-  //   expect(ctaElement.exists()).toBe(true);
-  // });
 });

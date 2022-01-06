@@ -13,17 +13,19 @@
       <div :class="this.textcolor" style="font-family: 'Merriweather', serif">
         <!-- TODO: Port logo to SVG for color changability  -->
         <img
-          class="mx-auto h-32 transform scale-75 md:scale-100 rounded-3xl mt-2"
+          class="mx-auto h-32 transform scale-75 -mb-5"
           src="../assets/logo.png"
           alt="logo"
         />
-        <!-- <svg></svg> -->
         <!-- TITLE -->
-        <h1 class="text-xl md:text-4xl font-extrabold md:mt-2 -m-5 md:m-3" data-test="title">
+        <h1
+          class="text-lg md:text-3xl font-extrabold"
+          data-test="title"
+        >
           {{ title }}
         </h1>
         <!-- SUBTITLE -->
-        <h4 class="text-sm md:text-lg mt-2 p-3 md:-mt-4" data-test="subtitle">
+        <h4 class="text- md:text-lg" data-test="subtitle">
           {{ msg }}
         </h4>
       </div>
@@ -45,11 +47,15 @@
           >
             <!-- Icon  & Message-->
             <img
-              class="h-10 w-10 md:h-16 md:w-16 m-2 p-2 rounded-xl bg-white"
+              class="h-10 w-10 md:h-10 md:w-10 m-2 p-2 rounded-xl bg-white"
               v-bind:src="images.url"
               alt="logo"
             />
-            <p class="flex my-auto text-sm md:text-lg text-left ml-2" data-test="cta">
+            <p
+              class="flex my-auto text-sm md:text-baseline text-left ml-2"
+              data-test="cta"
+              id="linkText"
+            >
               {{ details.CTA }}
             </p>
           </a>
@@ -60,8 +66,8 @@
 
       <div :class="iconcolor">
         <!-- FACEBOOK -->
-        <a href="https://www.facebook.com"
-          ><svg
+        <a href="https://www.facebook.com" data-test="socialMediaIcons">
+          <svg
             class="h-8 w-8"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -77,7 +83,7 @@
         </a>
 
         <!-- GITHUB -->
-        <a href="https://www.github.com/"
+        <a href="https://www.github.com/" data-test="socialMediaIcons"
           ><svg
             class="h-8 w-8"
             viewBox="0 0 24 24"
@@ -94,8 +100,8 @@
 
         <!-- INSTAGRAM -->
 
-        <a href="https://www.instagram.com"
-          ><svg
+        <a href="https://www.instagram.com" data-test="socialMediaIcons">
+          <svg
             class="h-8 w-8"
             viewBox="0 0 24 24"
             fill="none"
@@ -110,8 +116,8 @@
         ></a>
 
         <!-- TWITTER -->
-        <a href="https://twitter.com/"
-          ><svg
+        <a href="https://twitter.com/" data-test="socialMediaIcons">
+          <svg
             class="h-8 w-8"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -126,8 +132,8 @@
         ></a>
 
         <!-- LINKEDIN  -->
-        <a href="https://www.linkedin.com/"
-          ><svg
+        <a href="https://www.linkedin.com/" data-test="socialMediaIcons">
+          <svg
             class="h-8 w-8"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -167,7 +173,7 @@ export default {
       bgcolor: "",
       subcolor: "",
       iconcolor: "",
-      textcolor: ""
+      textcolor: "",
     };
   },
 
