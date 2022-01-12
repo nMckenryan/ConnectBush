@@ -11,10 +11,9 @@
     <div class="flex flex-col flex-shrink" id="app">
       <!--  HEADER IMAGE-->
       <div :class="this.textcolor" style="font-family: 'Merriweather', serif">
-        <!-- TODO: Port logo to SVG for color changability  -->
         <img
           class="mx-auto h-32 transform scale-75 -mb-5"
-          src="../assets/logo.png"
+          src="../assets/logoWhite.png"
           alt="logo"
         />
         <!-- TITLE -->
@@ -162,9 +161,10 @@ export default {
   async mounted() {
     // Fetch data on load
     this.links = await this.fetchLinks();
-    console.log(await this.fetchLinks());
     this.backgroundRandom();
   },
+
+
   props: ["msg", "title"],
   data() {
     return {
@@ -188,32 +188,30 @@ export default {
     backgroundRandom() {
       let colorArr = [
         //10 colors
-        // 0 = main color, 1 = gradient end, 2 = contrasting window color. 3 = text
-        ["trollOrange", "trollOrange", "sonsBlue", "white"],
-        ["adMech", "white", "screamGrey", "black"],
-        ["screamGrey", "adMech", "nightLord", "white"],
-        ["nightLord", "sonsBlue", "black", "white"],
+        // 0 = main color, 1 contrasting window color. 2 = text
+        ["trollOrange", "sonsBlue", "white"],
+        ["sonsBlue", "adMech", "white"],
+        ["adMech", "black", "white"],
+        ["nightLord", "black", "white"],
       ];
 
       // Selects a Color Scheme at random
       var scheme = colorArr[_.random(0, 3)];
       this.iconcolor =
         "flex mx-auto items-center rounded-lg p-1 bg-" +
-        scheme[2] +
-        " text-" +
-        scheme[3];
-      this.bgcolor =
-        "bg-gradient-to-t from-" +
-        scheme[0] +
-        " to-" +
         scheme[1] +
+        " text-" +
+        scheme[2];
+      this.bgcolor =
+        "bg-" +
+        scheme[0] +
         " min-h-screen";
       this.subcolor =
-        "bg-" + scheme[2] + " text-" + scheme[3] + " rounded-2xl shadow-lg";
-      this.textcolor = "text-" + scheme[3];
+        "bg-" + scheme[1] + " text-" + scheme[2] + " rounded-2xl shadow-lg";
+      this.textcolor = "text-" + scheme[2];
       this.stroke =
         "-webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: " +
-        scheme[2];
+        scheme[1];
     },
   },
 };
