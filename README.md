@@ -1,24 +1,3 @@
-# connectbush
+# ConnectBush
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## A simple Linktree clone for collating Social Media Links and displaying offers.  Live version on https://connect-bush.netlify.app/
