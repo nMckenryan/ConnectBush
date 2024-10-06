@@ -6,7 +6,6 @@
 
 <script>
 import Bush from "./components/Bush.vue";
-// import Logo from "./assets/companyCoLogo.svg";
 
 export default {
   name: "App",
