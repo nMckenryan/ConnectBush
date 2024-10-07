@@ -3,12 +3,12 @@
     <!-- Link Columns -->
     <div v-if="links.length > 0">
       <div
-        class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240"
+
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.message"
       >
-        <div :class="subcolor">
+        <div class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240 bg-stone">
           <a
             class="flex"
             v-bind:href="details.Link"
@@ -35,12 +35,17 @@
     </div>
 
     <!-- Fallback if no links available -->
-    <div v-else class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240">
+    <div v-else>
       <div
-        class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240"
+        class="mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 bg-white rounded-lg shadow-md"
         id="linkCol"
       >
-        <div :class="subcolor">
+        <div class="flex flex-row">
+            <img
+              class="h-10 w-10 md:h-10 md:w-10 m-2 p-2 rounded-xl bg-transparent"
+              src="../assets/logoBlack.png"
+              alt="logo"
+            />
           <p
             class="flex my-auto text-sm md:text-baseline text-left ml-2"
             data-test="fallbackCta"
