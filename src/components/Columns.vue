@@ -1,0 +1,72 @@
+<template>
+  <div class="columns">
+    <!-- Link Columns -->
+    <div v-if="links.length > 0">
+      <div
+        class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240"
+        id="linkCol"
+        v-for="details in links"
+        v-bind:key="details.message"
+      >
+        <div :class="subcolor">
+          <a
+            class="flex"
+            v-bind:href="details.Link"
+            v-for="images in details.Thumbnails"
+            v-bind:key="images.url"
+            style="fill: green !important"
+          >
+            <!-- Icon  & Message-->
+            <img
+              class="h-10 w-10 md:h-10 md:w-10 m-2 p-2 rounded-xl bg-white"
+              v-bind:src="images.url"
+              alt="logo"
+            />
+            <p
+              class="flex my-auto text-sm md:text-baseline text-left ml-2"
+              data-test="cta"
+              id="linkText"
+            >
+              {{ details.CTA }}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fallback if no links available -->
+    <div v-else class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240">
+      <div
+        class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240"
+        id="linkCol"
+      >
+        <div :class="subcolor">
+          <p
+            class="flex my-auto text-sm md:text-baseline text-left ml-2"
+            data-test="fallbackCta"
+            id="fallbackText"
+          >
+            No links available at this time
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ColumnView",
+  async mounted() {
+    this.links = await this.fetchLinks();
+  },
+  data() {
+    return {
+      links: [],
+      credentials: process.env.VUE_APP_AT_LINK,
+    };
+  },
+};
+</script>
+
+
