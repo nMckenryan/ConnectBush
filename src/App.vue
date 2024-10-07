@@ -1,16 +1,16 @@
 <template>
   <main>
-    <Bush title="Company Co Ltd Pty" msg="Business Administration Solutions" />
+    <MainView title="Company Co Ltd Pty" msg="Business Administration Solutions" />
   </main>
 </template>
 
 <script>
-import Bush from "./components/Bush.vue";
+import MainView from "./components/MainView.vue";
 
 export default {
   name: "App",
   components: {
-    Bush
+    MainView
   },
 };
 </script>
