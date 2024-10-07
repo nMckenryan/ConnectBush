@@ -14,7 +14,7 @@
 - [x] Update NPM packages
 - [x] Scope what needs to be refactored
 
-  - [/] Show fallback if no available links
+  - [x] Show fallback if no available links
   - [x] Separate components
   - [ ] Reestablish Airtable connection
   - [x] Create animated background

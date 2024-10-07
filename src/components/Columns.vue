@@ -60,10 +60,21 @@
 </template>
 
 <script>
+// import Airtable from 'airtable';
+// const airtable = new Airtable({ apiKey: process.env.AIRTABLE_PA_TOKEN});
+
+
+
+
 export default {
   name: "ColumnView",
   async mounted() {
-    this.links = await this.fetchLinks();
+
+        // Fetch data from Airtable and update the records array
+    //     airtable.table('connectbush').select().all().then(records => {
+    //   this.records = records;
+    // });
+    this.links
   },
   data() {
     return {

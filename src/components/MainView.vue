@@ -23,8 +23,6 @@ import SocialMediaView from "./SocialMediaView.vue";
 import Header from "./Header.vue";
 import { ParticlesBg } from "particles-bg-vue";
 
-
-
 export default {
   name: "MainView",
   components: {
