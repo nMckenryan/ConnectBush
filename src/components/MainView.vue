@@ -8,7 +8,7 @@
   />
 
   <body>
-    <particles-bg type="thick" :bg="true" />
+    <particles-bg type="cobweb" :canvas="{backgroundColor:'#313639'}" color='#39FF14' :config="config" :bg="true"/>
     <div class="flex flex-col flex-shrink" id="app">
       <Header title="ConnectBush" msg="All your links. All in one."/>
       <ColumnView />
@@ -24,6 +24,7 @@ import Header from "./Header.vue";
 import { ParticlesBg } from "particles-bg-vue";
 
 
+
 export default {
   name: "MainView",
   components: {
@@ -32,48 +33,33 @@ export default {
     SocialMediaView,
     Header,
   },
-
-  async mounted() {
-    this.backgroundRandom();
-  },
-
-  data() {
+  data: function() {
     return {
-      bgcolor: "",
-      subcolor: "",
-      iconcolor: "",
+      config: {
+        // number of particles
+        num: [2, 3],
+        // rate of particles per second
+        rps: 0.001,
+        // radius of particles
+        radius: [600, 1200],
+        // life of particles
+        life: [15, 30],
+        // velocity of particles
+        v: [0.00001],
+        // angle of particles in degrees (between -30 and 30)
+        tha: [-30, 30],
+        // transparency of particles (between 0.6 and 0)
+        alpha: [0.6, 0],
+        // scale of particles
+        scale: [0.1, 0.4],
+        // position of particles
+        position: "",
+        // behavior of particles when they cross each other
+        cross: "dead",
+        // randomness of particles
+        random: 30
+      }
     };
-  },
-
-  methods: {
-    backgroundRandom() {
-      let colorArr = [
-        //10 colors
-        // 0 = main color, 1 contrasting window color. 2 = text
-        ["trollOrange", "sonsBlue", "white"],
-        ["sonsBlue", "adMech", "white"],
-        ["adMech", "black", "white"],
-        ["nightLord", "black", "white"],
-      ];
-
-      // Selects a Color Scheme at random
-      var scheme = colorArr[Math.floor(Math.random() * colorArr.length)];
-
-      this.iconcolor =
-        "flex mx-auto items-center rounded-lg p-1 bg-" +
-        scheme[1] +
-        " text-" +
-        scheme[2];
-      this.bgcolor =
-        "bg-" +
-        scheme[0] +
-        " min-h-screen";
-      this.subcolor =
-        "bg-" + scheme[1] + " text-" + scheme[2] + " rounded-2xl shadow-lg";
-      this.stroke =
-        "-webkit-text-stroke-width: 0.5px; -webkit-text-stroke-color: " +
-        scheme[1];
-    },
-  },
+  }
 };
 </script>
