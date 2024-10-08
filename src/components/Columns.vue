@@ -23,7 +23,7 @@
               alt="logo"
             />
             <p
-              class="flex my-auto text-sm md:text-lg text-left ml-2"
+              class="flex my-auto text-sm md:text-lg text-left ml-2 text-black"
               data-test="cta"
               id="linkText"
             >
@@ -47,7 +47,7 @@
               alt="logo"
             />
           <p
-            class="flex my-auto text-sm md:text-baseline text-left ml-2"
+            class="flex my-auto text-sm md:text-baseline text-left ml-2 text-black"
             data-test="fallbackCta"
             id="fallbackText"
           >
@@ -62,21 +62,26 @@
 <script>
 
 
-const { VUE_APP_AIRTABLE_PA_TOKEN, VUE_APP_AIRTABLE_URL } = process.env;
 
 export default {
   name: "ColumnView",
   async mounted() {
+    const url = import.meta.env.VITE_URL;
+    const token = import.meta.env.VITE_PA_TOKEN;
 
-    fetch(VUE_APP_AIRTABLE_URL, {
-      headers: {
-        Authorization: `Bearer ${VUE_APP_AIRTABLE_PA_TOKEN}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => this.links = data.records.map(record => record.fields))
-      .catch((error) => console.error(error));
+    try {
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      this.links = data.records.map(record => record.fields);
+    } catch (error) {
+      console.error(error);
+    }
   },
+
   data() {
     return {
       links: [],
