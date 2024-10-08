@@ -9,9 +9,9 @@
   - [x] Create animated background
   - [x] Reestablish Airtable connection
   - [ ] Rerender social media bar
-  - [ ] Speed up retrieval of links
+  - [x] Speed up retrieval of links
 
-- [ ] Mobile Responsiveness
+- [x] Mobile Responsiveness
 - [/] Write proper readme
 - [x] Add ENVs to render
   - [x] Screenshots
