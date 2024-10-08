@@ -6,7 +6,7 @@
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.CTA"
-        class="flex-shrink mx-auto w-full md:w-3/4 m-3 p-1 bg-white rounded-lg shadow-md"
+        class="flex-shrink mx-auto w-full m-3  md:w-11/12 p-1 md:p-3 lg:w-2/4 lg:p-5 bg-white rounded-lg shadow-md"
       >
         <a
           class="flex"
@@ -16,12 +16,12 @@
           style="fill: green !important"
         >
           <img
-            class="h-10 w-10 md:h-10 md:w-10 m-2 p-2 rounded-xl bg-white"
-            v-lazy="images.url"
+            class="h-10 w-10 md:h-10 md:w-10 lg:h-14 lg:w-14 m-2 p-2 rounded-xl bg-white"
+            v-bind:src="images.url"
             alt="logo"
           />
           <p
-            class="flex my-auto text-sm md:text-lg text-left ml-2 text-black"
+            class="flex my-auto text-sm md:text-xl text-left ml-2 text-black"
             data-test="cta"
             id="linkText"
           >
