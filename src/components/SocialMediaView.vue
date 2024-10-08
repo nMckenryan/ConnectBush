@@ -1,5 +1,5 @@
 <template>
-  <div :class="iconcolor">
+  <div class="bg-white">
     <a
       v-for="(icon, index) in socialMediaIcons"
       :key="index"

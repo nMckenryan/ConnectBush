@@ -12,10 +12,10 @@
   - [x] Speed up retrieval of links
 
 - [x] Mobile Responsiveness
-- [/] Write proper readme
+- [x] Write proper readme
 - [x] Add ENVs to render
   - [x] Screenshots
-  - [ ] Instructions for Use
+  - [x] Instructions for Use
 - [x] Upload to Render
 - [x] Add ENVs to render
 
