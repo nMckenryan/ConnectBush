@@ -1,12 +1,14 @@
 # ConnectBush
 
-## A simple Linktree clone for collating Social Media Links and displaying offers. Live version on https://connect-bush.netlify.app/
+#### A simple Linktree clone for collating Social Media Links and displaying offers. Live version on https://connect-bush.netlify.app/
+
+#### Offers a simple way for staff to quickly change the offers available by using the Airtable interface
 
 ### Features
 
 - VueJs Interface
 - CSS handled by Tailwind/PostCSS
-- Background by particles-bg-vue
+- Background by particles-bg
 - LinkTree integration
 
 ## TODO:
@@ -16,16 +18,18 @@
 
   - [x] Show fallback if no available links
   - [x] Separate components
-  - [ ] Reestablish Airtable connection
   - [x] Create animated background
+  - [x] Reestablish Airtable connection
+  - [ ] Rerender social media bar
 
 - [ ] Examine tests and re-write if needed
 - [ ] Write proper readme
   - [ ] Screenshots
   - [ ] Instructions for Use (upload to node?)
-- [ ] Upload to Render/Vercel
+- [/] Upload to Render
+- [ ] Add ENVs to render
 
 ## FUTURE:
 
 - [ ] Auth for other user to plug in their airtable deets
-- [ ] Make social media links actually go somewhere
+- [ ] Make options for inserting social media
