@@ -1,71 +1,45 @@
 # ConnectBush
 
-#### A simple Linktree clone for collating Social Media Links and displaying offers. Live version on https://connect-bush.netlify.app/
+A simple Linktree clone for collating Social Media Links and displaying offers.
 
-#### Offers a simple way for staff to quickly change the offers available by using the Airtable interface
+## Screenshots
 
-### Features
+[Insert screenshots of the application]
 
-- VueJs Interface
-- CSS handled by Tailwind/PostCSS
-- Background by particles-bg
+## Features
+
+- Built with VueJs/Vite
+- Hosted via Render
+- CSS handled by Tailwind
+- Background Animation by Vanta, Loading Spinner by Epic Spinners
 - LinkTree integration
 
-## TODO:
+## Getting Started
 
-- [x] Update NPM packages
-- [x] Scope what needs to be refactored
+### Installation
 
-  - [x] Show fallback if no available links
-  - [x] Loading Screen Spinner
-  - [x] Separate components
-  - [x] Create animated background
-  - [x] Reestablish Airtable connection
-  - [ ] Rerender social media bar
+1. Clone the repository
+2. Install dependencies: `pnpm install`
+3. Start the development server: `pnpm dev`
 
-- [ ] Examine tests and re-write if needed
-- [ ] Write proper readme
-  - [ ] Screenshots
-  - [ ] Instructions for Use (upload to node?)
-- [/] Upload to Render
-- [ ] Add ENVs to render
+### Configuration
 
-## FUTURE:
+The application uses environment variables for configuration. You can set them in a `.env` file in the root of the project.
 
-- [ ] Auth for other user to plug in their airtable deets
-- [ ] Make options for inserting social media
+| Variable                   | Description      | Default |
+| -------------------------- | ---------------- | ------- |
+| `VUE_APP_AIRTABLE_BASE_ID` | Airtable base ID | -       |
+| `VUE_APP_AIRTABLE_API_KEY` | Airtable API key | -       |
 
-#### A simple Linktree clone for collating Social Media Links and displaying offers. Live version on https://connect-bush.netlify.app/
+## Roadmap
 
-#### Offers a simple way for staff to quickly change the offers available by using the Airtable interface
+- [ ] Implment Auth for other users, to plug in their airtable details
+- [ ] Make options for inserting social media links
 
-### Features
+## Contributing
 
-- VueJs Interface
-- CSS handled by Tailwind/PostCSS
-- Background by particles-bg
-- LinkTree integration
+Contributions are welcome! Please open an issue or pull request to get started.
 
-## TODO:
+## License
 
-- [x] Update NPM packages
-- [x] Scope what needs to be refactored
-
-  - [x] Show fallback if no available links
-  - [x] Separate components
-  - [x] Create animated background
-  - [x] Reestablish Airtable connection
-  - [ ] Rerender social media bar
-
-- [ ] Upgrade to Vite build
-- [ ] Examine tests and re-write if needed
-- [ ] Write proper readme
-  - [ ] Screenshots
-  - [ ] Instructions for Use (upload to node?)
-- [/] Upload to Render
-- [ ] Add ENVs to render
-
-## FUTURE:
-
-- [ ] Auth for other user to plug in their airtable deets
-- [ ] Make options for inserting social media
+This project is licensed under the MIT License. See the [LICENSE] file for more information.

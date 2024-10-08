@@ -1,7 +1,8 @@
 <template >
   <main id="bg" class="bg-black h-screen">
-    <v-vanta effect="topology" >
-    <MainView title="Company Co Ltd Pty" msg="Business Administration Solutions" /></v-vanta>
+    <v-vanta effect="topology" style="position: absolute; left: 0; top: 0; height: 100vh; width: 100vw;">
+    <MainView title="Company Co Ltd Pty" msg="Business Administration Solutions" />
+    </v-vanta>
   </main>
 </template>
 
