@@ -17,6 +17,7 @@
 - [x] Scope what needs to be refactored
 
   - [x] Show fallback if no available links
+  - [x] Loading Screen Spinner
   - [x] Separate components
   - [x] Create animated background
   - [x] Reestablish Airtable connection
