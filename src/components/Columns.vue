@@ -1,14 +1,14 @@
 <template>
-  <div class="columns">
+  <div class="columnsView">
     <!-- Link Columns -->
-    <div v-if="links.length > 0">
+    <div v-if="links?.length > 0">
       <div
 
         id="linkCol"
         v-for="details in links"
         v-bind:key="details.message"
       >
-        <div class="flex-col mx-auto w-full md:w-2/4 flex-shrink m-1 p-1 w-240 bg-stone">
+        <div class="flex-shrink mx-auto w-full md:w-3/4 m-3 p-1  bg-white rounded-lg shadow-md">
           <a
             class="flex"
             v-bind:href="details.Link"
@@ -23,7 +23,7 @@
               alt="logo"
             />
             <p
-              class="flex my-auto text-sm md:text-baseline text-left ml-2"
+              class="flex my-auto text-sm md:text-lg text-left ml-2"
               data-test="cta"
               id="linkText"
             >
@@ -60,26 +60,26 @@
 </template>
 
 <script>
-// import Airtable from 'airtable';
-// const airtable = new Airtable({ apiKey: process.env.AIRTABLE_PA_TOKEN});
 
 
-
+const { VUE_APP_AIRTABLE_PA_TOKEN, VUE_APP_AIRTABLE_URL } = process.env;
 
 export default {
   name: "ColumnView",
   async mounted() {
 
-        // Fetch data from Airtable and update the records array
-    //     airtable.table('connectbush').select().all().then(records => {
-    //   this.records = records;
-    // });
-    this.links
+    fetch(VUE_APP_AIRTABLE_URL, {
+      headers: {
+        Authorization: `Bearer ${VUE_APP_AIRTABLE_PA_TOKEN}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => this.links = data.records.map(record => record.fields))
+      .catch((error) => console.error(error));
   },
   data() {
     return {
       links: [],
-      credentials: process.env.VUE_APP_AT_LINK,
     };
   },
 };
