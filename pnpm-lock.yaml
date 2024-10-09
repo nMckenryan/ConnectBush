@@ -11,19 +11,16 @@ importers:
       epic-spinners:
         specifier: ^2.0.0
         version: 2.0.0(vue@3.5.11(typescript@5.6.2))
-      particles-bg-vue:
-        specifier: ^1.3.5
-        version: 1.3.5
       vue:
         specifier: ^3.5.10
         version: 3.5.11(typescript@5.6.2)
-      vue-vanta:
-        specifier: ^0.0.1
-        version: 0.0.1
       vue-vanta-revamp:
         specifier: ^0.1.2
         version: 0.1.2
     devDependencies:
+      '@iconify/vue':
+        specifier: ^4.1.2
+        version: 4.1.2(vue@3.5.11(typescript@5.6.2))
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
         version: 5.1.4(vite@5.4.8)(vue@3.5.11(typescript@5.6.2))
@@ -207,6 +204,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+
+  '@iconify/vue@4.1.2':
+    resolution: {integrity: sha512-CQnYqLiQD5LOAaXhBrmj1mdL2/NCJvwcC4jtW2Z8ukhThiFkLDkutarTOV2trfc9EXqUqRs0KqXOL9pZ/IyysA==}
+    peerDependencies:
+      vue: '>=3'
+
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -350,9 +355,6 @@ packages:
   '@vue/compiler-dom@3.5.11':
     resolution: {integrity: sha512-pyGf8zdbDDRkBrEzf8p7BQlMKNNF5Fk/Cf/fQ6PiUz9at4OaUfyXW0dGJTo2Vl1f5U9jSLCNf0EZJEogLXoeew==}
 
-  '@vue/compiler-sfc@2.7.16':
-    resolution: {integrity: sha512-KWhJ9k5nXuNtygPU7+t1rX6baZeqOYLEforUPjgNDBnLicfHCoi48H87Q8XyLZOrNNsmhuwKqtpDQWjEFe6Ekg==}
-
   '@vue/compiler-sfc@3.5.11':
     resolution: {integrity: sha512-gsbBtT4N9ANXXepprle+X9YLg2htQk1sqH/qGJ/EApl+dgpUBdTv3yP7YlR535uHZY3n6XaR0/bKo0BgwwDniw==}
 
@@ -464,10 +466,6 @@ packages:
   computeds@0.0.1:
     resolution: {integrity: sha512-7CEBgcMjVmitjYo5q8JTJVra6X5mQ20uTThdK+0kR7UEaDrAWEQcRiBtWJzga4eRpP6afNwwLsX2SET2JhVB1Q==}
 
-  core-js@2.6.12:
-    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
-    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
-
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -479,10 +477,6 @@ packages:
 
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-
-  d@1.0.2:
-    resolution: {integrity: sha512-MOqHvMWF9/9MX6nza0KgvFH4HpMU0EF5uUDXqX/BtxtU8NfB0QzRtJ8Oe/6SuS4kbhyzVJwjd97EA4PKrzJ8bw==}
-    engines: {node: '>=0.12'}
 
   de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
@@ -514,24 +508,6 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
-  es5-ext@0.10.64:
-    resolution: {integrity: sha512-p2snDhiLaXe6dahss1LddxqEm+SkuDvV8dnIQG0MWjyHpcMNfXKPE+/Cc0y+PhxJX3A4xGNeFCj5oc0BUh6deg==}
-    engines: {node: '>=0.10'}
-
-  es6-iterator@2.0.3:
-    resolution: {integrity: sha512-zw4SRzoUkd+cl+ZoE15A9o1oQd920Bb0iOJMQkQhl3jNc03YqVjAhG7scf9C5KWRU/R13Orf588uCC6525o02g==}
-
-  es6-map@0.1.5:
-    resolution: {integrity: sha512-mz3UqCh0uPCIqsw1SSAkB/p0rOzF/M0V++vyN7JqlPtSW/VsYgQBvVvqMLmfBuyMzTpLnNqi6JmcSizs4jy19A==}
-
-  es6-set@0.1.6:
-    resolution: {integrity: sha512-TE3LgGLDIBX332jq3ypv6bcOpkLO0AslAQo7p2VqX/1N46YNsvIWgvjojjSEnWEGWMhr1qUbYeTSir5J6mFHOw==}
-    engines: {node: '>=0.12'}
-
-  es6-symbol@3.1.4:
-    resolution: {integrity: sha512-U9bFFjX8tFiATgtkJ1zg25+KviIXpgRvRHS8sau3GfhVzThRQrOeksPeT0BWW2MNZs1OEWJ1DPXOQMn0KKRkvg==}
-    engines: {node: '>=0.12'}
-
   esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
     engines: {node: '>=12'}
@@ -541,18 +517,8 @@ packages:
     resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==}
     engines: {node: '>=6'}
 
-  esniff@2.0.1:
-    resolution: {integrity: sha512-kTUIGKQ/mDPFoJ0oVfcmyJn4iBDRptjNVIzwIFR7tqWXdVI9xfA2RMwY/gbSpJG3lkdWNEjLap/NqVHZiJsdfg==}
-    engines: {node: '>=0.10'}
-
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
-
-  event-emitter@0.3.5:
-    resolution: {integrity: sha512-D9rRn9y7kLPnJ+hMq7S/nhvoKwwvVJahBi2BPmx3bvbsEdK3W9ii8cBSGjP+72/LnM4n6fo3+dkCX5FeTQruXA==}
-
-  ext@1.7.0:
-    resolution: {integrity: sha512-6hxeJYaL110a9b5TEJSj0gojyHQAmA2ch5Os+ySCiA1QGdS697XWY1pzsrSjqA9LDEEgdB/KypIlR59RcLuHYw==}
 
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
@@ -678,9 +644,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  next-tick@1.1.0:
-    resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
-
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
 
@@ -702,10 +665,6 @@ packages:
 
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
-
-  particles-bg-vue@1.3.5:
-    resolution: {integrity: sha512-lVTRHaMCQeoq0DUC2rSXDUwNYzq52nB352Nq5RDYebd2BJf4v7+3lPnElWYulqu1gKysvTE0X1Uq9hc6OpLrow==}
-    engines: {node: '>= 4.0.0', npm: '>= 3.0.0'}
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
@@ -777,19 +736,8 @@ packages:
     resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-
-  proton-engine@4.2.1:
-    resolution: {integrity: sha512-c72hgcnwMyyvUoy7Jq/HX3HQZnAo5MUNvFbyZHiWZrwcERX9+lYzM9YyT0iueXVAJpt+r8nrPan9F3HTXj7IsA==}
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
-
-  raf-manager@0.3.0:
-    resolution: {integrity: sha512-qLpVgVlUmwtlY35zoyCQwLWMOpLkVtiItPd/RxouHAh80XZjoh84CF5pFBVyIIUWXubypSJi1OBJS4jM7onOng==}
 
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -833,10 +781,6 @@ packages:
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
-    engines: {node: '>=0.10.0'}
-
-  source-map@0.6.1:
-    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
   string-width@4.2.3:
@@ -886,9 +830,6 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
-
-  type@2.7.3:
-    resolution: {integrity: sha512-8j+1QmAbPvLZow5Qpi6NCaN8FB60p/6x8/vfNqOk/hC+HuvFZhL4+WfekuhQLiqFZXOgQdrs3B+XxEmCc6b3FQ==}
 
   typescript@5.6.2:
     resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
@@ -946,13 +887,6 @@ packages:
 
   vue-vanta-revamp@0.1.2:
     resolution: {integrity: sha512-52U+KtlAMH/CYZf1TgHrj+Igx6vV3e+qKS0B2VGcUZGe13im4ZJDYaSDBSBkYuDfQP4gWbsoqtQuomtORP8Dvg==}
-
-  vue-vanta@0.0.1:
-    resolution: {integrity: sha512-OGnl3zkf2mMqmrJxG3DefWTweLHt/0J3M1+hTOLxgHlqWSf45FNKvCgUQFIPqoW++IBfw/5Wc3HRt1HxUBpFXQ==}
-
-  vue@2.7.16:
-    resolution: {integrity: sha512-4gCtFXaAA3zYZdTp5s4Hl2sozuySsgz4jy1EnpBHNfpMa9dK1ZCG7viqBPCwXtmgc8nHqUsAu3G4gtmXkkY3Sw==}
-    deprecated: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
 
   vue@3.5.11:
     resolution: {integrity: sha512-/8Wurrd9J3lb72FTQS7gRMNQD4nztTtKPmuDuPuhqXmmpD6+skVjAeahNpVzsuky6Sy9gy7wn8UadqPtt9SQIg==}
@@ -1066,6 +1000,13 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@iconify/types@2.0.0': {}
+
+  '@iconify/vue@4.1.2(vue@3.5.11(typescript@5.6.2))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.11(typescript@5.6.2)
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -1187,14 +1128,6 @@ snapshots:
     dependencies:
       '@vue/compiler-core': 3.5.11
       '@vue/shared': 3.5.11
-
-  '@vue/compiler-sfc@2.7.16':
-    dependencies:
-      '@babel/parser': 7.25.7
-      postcss: 8.4.47
-      source-map: 0.6.1
-    optionalDependencies:
-      prettier: 2.8.8
 
   '@vue/compiler-sfc@3.5.11':
     dependencies:
@@ -1329,8 +1262,6 @@ snapshots:
 
   computeds@0.0.1: {}
 
-  core-js@2.6.12: {}
-
   cross-spawn@7.0.3:
     dependencies:
       path-key: 3.1.1
@@ -1340,11 +1271,6 @@ snapshots:
   cssesc@3.0.0: {}
 
   csstype@3.1.3: {}
-
-  d@1.0.2:
-    dependencies:
-      es5-ext: 0.10.64
-      type: 2.7.3
 
   de-indent@1.0.2: {}
 
@@ -1365,42 +1291,6 @@ snapshots:
   epic-spinners@2.0.0(vue@3.5.11(typescript@5.6.2)):
     dependencies:
       vue: 3.5.11(typescript@5.6.2)
-
-  es5-ext@0.10.64:
-    dependencies:
-      es6-iterator: 2.0.3
-      es6-symbol: 3.1.4
-      esniff: 2.0.1
-      next-tick: 1.1.0
-
-  es6-iterator@2.0.3:
-    dependencies:
-      d: 1.0.2
-      es5-ext: 0.10.64
-      es6-symbol: 3.1.4
-
-  es6-map@0.1.5:
-    dependencies:
-      d: 1.0.2
-      es5-ext: 0.10.64
-      es6-iterator: 2.0.3
-      es6-set: 0.1.6
-      es6-symbol: 3.1.4
-      event-emitter: 0.3.5
-
-  es6-set@0.1.6:
-    dependencies:
-      d: 1.0.2
-      es5-ext: 0.10.64
-      es6-iterator: 2.0.3
-      es6-symbol: 3.1.4
-      event-emitter: 0.3.5
-      type: 2.7.3
-
-  es6-symbol@3.1.4:
-    dependencies:
-      d: 1.0.2
-      ext: 1.7.0
 
   esbuild@0.21.5:
     optionalDependencies:
@@ -1430,23 +1320,7 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  esniff@2.0.1:
-    dependencies:
-      d: 1.0.2
-      es5-ext: 0.10.64
-      event-emitter: 0.3.5
-      type: 2.7.3
-
   estree-walker@2.0.2: {}
-
-  event-emitter@0.3.5:
-    dependencies:
-      d: 1.0.2
-      es5-ext: 0.10.64
-
-  ext@1.7.0:
-    dependencies:
-      type: 2.7.3
 
   fast-glob@3.3.2:
     dependencies:
@@ -1562,8 +1436,6 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  next-tick@1.1.0: {}
-
   node-releases@2.0.18: {}
 
   normalize-path@3.0.0: {}
@@ -1575,12 +1447,6 @@ snapshots:
   object-hash@3.0.0: {}
 
   package-json-from-dist@1.0.1: {}
-
-  particles-bg-vue@1.3.5:
-    dependencies:
-      proton-engine: 4.2.1
-      raf-manager: 0.3.0
-      vue: 2.7.16
 
   path-browserify@1.0.1: {}
 
@@ -1638,17 +1504,7 @@ snapshots:
       picocolors: 1.1.0
       source-map-js: 1.2.1
 
-  prettier@2.8.8:
-    optional: true
-
-  proton-engine@4.2.1: {}
-
   queue-microtask@1.2.3: {}
-
-  raf-manager@0.3.0:
-    dependencies:
-      core-js: 2.6.12
-      es6-map: 0.1.5
 
   read-cache@1.0.0:
     dependencies:
@@ -1703,8 +1559,6 @@ snapshots:
   signal-exit@4.1.0: {}
 
   source-map-js@1.2.1: {}
-
-  source-map@0.6.1: {}
 
   string-width@4.2.3:
     dependencies:
@@ -1781,8 +1635,6 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  type@2.7.3: {}
-
   typescript@5.6.2: {}
 
   update-browserslist-db@1.1.1(browserslist@4.24.0):
@@ -1811,13 +1663,6 @@ snapshots:
       typescript: 5.6.2
 
   vue-vanta-revamp@0.1.2: {}
-
-  vue-vanta@0.0.1: {}
-
-  vue@2.7.16:
-    dependencies:
-      '@vue/compiler-sfc': 2.7.16
-      csstype: 3.1.3
 
   vue@3.5.11(typescript@5.6.2):
     dependencies:

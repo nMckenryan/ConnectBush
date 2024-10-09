@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="flex flex-row justify-center mx-auto w-1/4 p-1 rounded-lg shadow-md">
     <a
       v-for="(icon, index) in socialMediaIcons"
       :key="index"
@@ -8,16 +8,19 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div :class="iconcolor">
-        <font-awesome-icon :icon="['fab', 'instagram']" />
-      </div>
-    </a>
+      <Icon :icon="`prime:${icon.icon}`" class="h-10 w-10"/>
+  </a>
   </div>
 </template>
 
 <script>
+import { Icon } from '@iconify/vue';
+
 export default {
   name: "SocialMediaView",
+  components: {
+    Icon
+  },
   data() {
     return {
       socialMediaIcons: [
@@ -41,9 +44,22 @@ export default {
           link: "https://www.linkedin.com/",
           icon: "linkedin",
         },
+        {
+          link: "https://www.tiktok.com/",
+          icon: "tiktok",
+        },
+        {
+          link: "https://www.discord.com/",
+          icon: "discord",
+        },
+        {
+          link: "https://www.telegram.com/",
+          icon: "telegram",
+        },
       ],
     };
   },
 };
 </script>
+
 
