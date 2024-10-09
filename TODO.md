@@ -8,7 +8,7 @@
   - [x] Separate components
   - [x] Create animated background
   - [x] Reestablish Airtable connection
-  - [ ] Rerender social media bar
+  - [x] Rerender social media bar
   - [x] Speed up retrieval of links
 
 - [x] Mobile Responsiveness
