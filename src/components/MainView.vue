@@ -18,7 +18,6 @@
       <div class="flex flex-col flex-shrink" id="app">
         <Header title="ConnectBush" msg="All your links. All in one." />
         <ColumnView :links="links" />
-        <SocialMediaView />
       </div>
     </div>
   </body>
@@ -26,7 +25,6 @@
 
 <script>
 import ColumnView from "./ColumnView.vue";
-import SocialMediaView from "./SocialMediaView.vue";
 import Header from "./Header.vue";
 import {store} from "../store.js";
 import { IntersectingCirclesSpinner } from 'epic-spinners'
@@ -35,7 +33,6 @@ export default {
   name: "MainView",
   components: {
     ColumnView,
-    SocialMediaView,
     Header,
     IntersectingCirclesSpinner
   },
