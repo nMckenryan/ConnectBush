@@ -4,7 +4,7 @@
         id="linkCol"
         v-for="details in links"
         :key="details.CTA"
-        class="flex-shrink mx-auto w-full m-3  md:w-11/12 p-1 md:p-3 lg:w-2/4 lg:p-5 bg-white rounded-lg shadow-md"
+        class="flex-shrink mx-auto  m-3  w-full md:w-11/12 p-1 md:p-3 lg:w-2/4 bg-white rounded-lg shadow-md"
       >
         <a
           class="flex"
