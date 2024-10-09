@@ -15,6 +15,7 @@ A simple Linktree clone for collating Social Media Links and displaying offers.
 ## Screenshots
 
 <img src="./public/screenshots/desktopScreen.png" width="70%"/>
+<img src="./public/screenshots/mobile(iPhone SE).png" width="70%"/>
 
 ## Getting Started
 
